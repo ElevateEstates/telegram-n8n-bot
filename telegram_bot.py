@@ -16,6 +16,8 @@ def run_flask():
 
 # Telegram bot setup
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+if not TELEGRAM_TOKEN:
+    raise ValueError("TELEGRAM_TOKEN environment variable not set")
 N8N_WEBHOOK_URL = "https://elevateestates.app.n8n.cloud/webhook/1a1ba666-49f5-46d3-9891-8ee3eb816d4c/chat"
 
 def start(update, context):
